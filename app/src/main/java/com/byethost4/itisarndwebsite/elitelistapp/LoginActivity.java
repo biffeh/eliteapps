@@ -9,6 +9,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// tevo vykdomas metodo kodas
         setContentView(R.layout.activity_login);
+
+        setTitle(R.string.login_title);
+
+
+
     }
 
 

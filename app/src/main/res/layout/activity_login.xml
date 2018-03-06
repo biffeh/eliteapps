@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -67,9 +69,42 @@
         android:layout_height="10dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/simpleToast"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="@string/login_submit" />
+        android:textColor="#fff"
+        android:text="@string/login_submit"
+        />
+    <!-- Button's for simple and custom Toast -->
+
+
+    <!--<Button
+        android:id="@+id/customToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="#0f0"
+        android:text="Custom Toast"
+        android:textColor="#fff"
+        android:textSize="20sp" />-->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/example_edittext" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_the_text" />
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="@string/enter_text"
+        android:inputType="text" />
 
 </LinearLayout>

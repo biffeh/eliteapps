@@ -52,6 +52,7 @@
         android:text="Ne" />
         -->
     <EditText
+        android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_user_name" />
@@ -60,6 +61,7 @@
         android:layout_height="10dp" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_password"
@@ -69,11 +71,11 @@
         android:layout_height="10dp" />
 
     <Button
-        android:id="@+id/simpleToast"
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textColor="#fff"
-        android:text="@string/login_submit"
+        android:text="@string/login_button"
         />
     <!-- Button's for simple and custom Toast -->
 
@@ -87,24 +89,6 @@
         android:text="Custom Toast"
         android:textColor="#fff"
         android:textSize="20sp" />-->
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/example_edittext" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_the_text" />
-
-    <EditText
-        android:id="@+id/edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/enter_text"
-        android:inputType="text" />
 
 </LinearLayout>

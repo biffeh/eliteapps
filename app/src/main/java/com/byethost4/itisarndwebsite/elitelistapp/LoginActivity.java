@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText userName = (EditText) findViewById(R.id.user_name);
         final EditText password = (EditText) findViewById(R.id.password);
 
+
         Button loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -31,8 +32,10 @@ public class LoginActivity extends AppCompatActivity {
                                 "Slaptažodis: "+password.getText().toString(),
                         Toast.LENGTH_LONG).show();
 
+
             }
         });
+
     }
 
 

@@ -10,4 +10,5 @@
     <string name="enter_text">text changes</string>
     <string name="login_button">Login</string>
     <string name="login_label">Login</string>
+    <string name="login_invalid_username_password">Neteisingi prisijungimo duomenys</string>
 </resources>

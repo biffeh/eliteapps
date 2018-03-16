@@ -1,31 +1,32 @@
 package com.byethost4.itisarndwebsite.elitelistapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.EditText;
-import android.content.Intent;
+import android.widget.Toast;
 
 
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState); // vykdomas tėvo metodo kodas
-        setContentView(R.layout.activity_login);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
 
-        setTitle(R.string.login_label);
+        setTitle(R.string.register_title);
 
-        // pridėta nauja eilutė
         final EditText userName = (EditText) findViewById(R.id.user_name);
         final EditText password = (EditText) findViewById(R.id.password);
+        final EditText email = (EditText) findViewById(R.id.email);
 
 
-        Button loginButton = (Button) findViewById(R.id.login_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+
+        Button registerButton = (Button) findViewById(R.id.register_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sitoje vietoje rasomas kodas, kuris vykdomas ant mygtuko paspaudimo
 //                Toast.makeText(LoginActivity.this,
@@ -35,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean cancel = false;
                 userName.setError(null);
                 password.setError(null);
+                email.setError(null);
                 if (!Validation.isValidCredentials(userName.getText().toString())) {
 
                     userName.setError(getResources().getString(R.string.login_invalid_username_password));
@@ -45,40 +47,23 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError(getResources().getString(R.string.login_invalid_username_password));
                     password.requestFocus();
                     cancel = true;
+                } else if (!Validation.isValidEmail(email.getText().toString())){
+
+                    email.setError(getResources().getString(R.string.login_invalid_username_password));
+                    email.requestFocus();
+                    cancel = true;
+
                 }
                 if (!cancel) {
-//                    Toast.makeText(LoginActivity.this,
-//                            getResources().getString(R.string.login_invalid_username_password),
-//                            Toast.LENGTH_LONG).show();
-                    Intent goToSearch = new Intent(LoginActivity.this, SearchActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
-                    startActivity(goToSearch);
+                    Toast.makeText(RegisterActivity.this,
+                            getResources().getString(R.string.register_success),
+                            Toast.LENGTH_LONG).show();
+                    Intent goToLogin = new Intent(RegisterActivity.this, LoginActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
+                    startActivity(goToLogin);
 
                 }
             }
 
         });
-        Button registerButton = (Button) findViewById(R.id.register_button);
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                    Intent goToRegister = new Intent(LoginActivity.this, RegisterActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
-                    startActivity(goToRegister);
-
-                }
-
-
-        });
-
-
     }
 }
-
-
-
-
-
-
-
-
-
-

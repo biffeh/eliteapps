@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="10dp"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context="com.byethost4.itisarndwebsite.elitelistapp.RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,34 +23,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="@string/login_message"
+        android:text="@string/register_message"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/colorRed"
-        android:textSize="20dp" />
-
-    <!--
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Taip"
-         />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Taip"
-        />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="56dp"
-        android:layout_height="32dp"
-        android:text="Ne" />
-        -->
+        android:textSize="18dp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
     <EditText
         android:id="@+id/user_name"
         android:layout_width="match_parent"
@@ -61,35 +41,22 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/register_email"
+        android:inputType="textEmailAddress"/>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_password"
         android:inputType="textPassword" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textColor="#fff"
-        android:text="@string/login_button"        />
-    <!-- Button's for simple and custom Toast -->
-
-
-    <!--<Button
-        android:id="@+id/customToast"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:background="#0f0"
-        android:text="Custom Toast"
-        android:textColor="#fff"
-        android:textSize="20sp" />-->
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />

@@ -5,10 +5,16 @@
     <string name="login_user_name">User name</string>
     <string name="login_password">Password</string>
     <string name="login_message">Please enter your login</string>
-    <string name="example_edittext">Example showing EditText</string>
-    <string name="show_the_text">Show the Text</string>
-    <string name="enter_text">text changes</string>
+    <!--<string name="example_edittext">Example showing EditText</string>-->
+    <!--<string name="show_the_text">Show the Text</string>-->
+    <!--<string name="enter_text">text changes</string>-->
     <string name="login_button">Login</string>
     <string name="login_label">Login</string>
     <string name="login_invalid_username_password">Neteisingi prisijungimo duomenys</string>
+    <string name="register_button">Register</string>
+    <string name="register_message">Please enter your account details</string>
+    <string name="register_email">Email</string>
+    <string name="register_title">Account Registration</string>
+    <string name="register_success">Registration Successful</string>
+
 </resources>

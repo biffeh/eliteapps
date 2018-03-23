@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                     Intent goToLogin = new Intent(RegisterActivity.this, LoginActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
                     startActivity(goToLogin);
+                    RegisterActivity.this.finish();
 
                 }
             }

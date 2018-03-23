@@ -4,9 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 import android.widget.EditText;
 import android.content.Intent;
+import android.content.SharedPreferences;
+
 
 
 
@@ -24,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         final EditText password = (EditText) findViewById(R.id.password);
 
 
+
+
         Button loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -35,6 +40,35 @@ public class LoginActivity extends AppCompatActivity {
                 boolean cancel = false;
                 userName.setError(null);
                 password.setError(null);
+
+                CheckBox saveLoginCheckBox;
+                SharedPreferences loginPreferences;
+                SharedPreferences.Editor loginPrefsEditor;
+                Boolean saveLogin;
+
+                saveLoginCheckBox = (CheckBox)findViewById(R.id.saveLoginCheckBox);
+                loginPreferences = getSharedPreferences("LoginActivity", MODE_PRIVATE);
+                loginPrefsEditor = loginPreferences.edit();
+
+                saveLogin = loginPreferences.getBoolean("saveLogin", false);
+                if (saveLogin) {
+                    userName.setText(loginPreferences.getString("userName", ""));
+                    password.setText(loginPreferences.getString("password", ""));
+                    saveLoginCheckBox.setChecked(true);
+                }
+
+                if (saveLoginCheckBox.isChecked()) {
+                    loginPrefsEditor.putBoolean("saveLogin", true);
+                    loginPrefsEditor.putString("username", userName.getText().toString());
+                    loginPrefsEditor.putString("password", password.getText().toString());
+                    loginPrefsEditor.commit();
+                    loginPrefsEditor.apply();
+                } else {
+                    loginPrefsEditor.clear();
+                    loginPrefsEditor.commit();
+                }
+
+
                 if (!Validation.isValidCredentials(userName.getText().toString())) {
 
                     userName.setError(getResources().getString(R.string.login_invalid_username_password));
@@ -63,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent goToRegister = new Intent(LoginActivity.this, RegisterActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
                     startActivity(goToRegister);
+
 
                 }
 

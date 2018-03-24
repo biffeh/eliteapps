@@ -16,6 +16,6 @@
     <string name="register_email">Email</string>
     <string name="register_title">Account Registration</string>
     <string name="register_success">Registration Successful</string>
-    <string name="login_save">Save login info?</string>
+    <string name="login_checkbox">Save login info?</string>
 
 </resources>

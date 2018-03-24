@@ -72,11 +72,12 @@
         android:layout_width="match_parent"
         android:layout_height="10dp" />
     <CheckBox
-        android:id="@+id/saveLoginCheckBox"
+        android:id="@+id/login_remember_me"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_save"
-        android:textColor="#FFF" />
+        android:text="@string/login_checkbox"
+        android:background="#FFF"
+        android:textColor="#fc0000" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />

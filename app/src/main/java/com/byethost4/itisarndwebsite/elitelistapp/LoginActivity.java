@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 
 
 
@@ -25,6 +26,19 @@ public class LoginActivity extends AppCompatActivity {
         // pridėta nauja eilutė
         final EditText userName = (EditText) findViewById(R.id.user_name);
         final EditText password = (EditText) findViewById(R.id.password);
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.login_remember_me);
+
+        final User user = new User(LoginActivity.this);
+        checkBox.setChecked(user.isRemembered());
+        if (user.isRemembered())
+        {
+            userName.setText(user.getUserNameForLogin(), TextView.BufferType.EDITABLE);
+            password.setText(user.getPasswordForLogin(), TextView.BufferType.EDITABLE);
+        }else{
+            userName.setText("", TextView.BufferType.EDITABLE);
+            password.setText("", TextView.BufferType.EDITABLE);
+        }
+
 
 
 
@@ -40,33 +54,6 @@ public class LoginActivity extends AppCompatActivity {
                 boolean cancel = false;
                 userName.setError(null);
                 password.setError(null);
-
-                CheckBox saveLoginCheckBox;
-                SharedPreferences loginPreferences;
-                SharedPreferences.Editor loginPrefsEditor;
-                Boolean saveLogin;
-
-                saveLoginCheckBox = (CheckBox)findViewById(R.id.saveLoginCheckBox);
-                loginPreferences = getSharedPreferences("LoginActivity", MODE_PRIVATE);
-                loginPrefsEditor = loginPreferences.edit();
-
-                saveLogin = loginPreferences.getBoolean("saveLogin", false);
-                if (saveLogin) {
-                    userName.setText(loginPreferences.getString("userName", ""));
-                    password.setText(loginPreferences.getString("password", ""));
-                    saveLoginCheckBox.setChecked(true);
-                }
-
-                if (saveLoginCheckBox.isChecked()) {
-                    loginPrefsEditor.putBoolean("saveLogin", true);
-                    loginPrefsEditor.putString("username", userName.getText().toString());
-                    loginPrefsEditor.putString("password", password.getText().toString());
-                    loginPrefsEditor.commit();
-                    loginPrefsEditor.apply();
-                } else {
-                    loginPrefsEditor.clear();
-                    loginPrefsEditor.commit();
-                }
 
 
                 if (!Validation.isValidCredentials(userName.getText().toString())) {
@@ -84,6 +71,15 @@ public class LoginActivity extends AppCompatActivity {
 //                    Toast.makeText(LoginActivity.this,
 //                            getResources().getString(R.string.login_invalid_username_password),
 //                            Toast.LENGTH_LONG).show();
+                    user.setUserNameForLogin(userName.getText().toString());
+                    user.setPasswordForLogin(password.getText().toString());
+                    if (checkBox.isChecked())
+                    {
+                        user.setRememberMeKey(true);
+                    }else{
+                        user.setRememberMeKey(false);
+                    }
+
                     Intent goToSearch = new Intent(LoginActivity.this, SearchActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
                     startActivity(goToSearch);
 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".EntryRegistryActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/colorAccent"
+        android:src="@mipmap/ic_launcher"
+        android:textAlignment="center" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/new_entry_message"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorRed"
+        android:textSize="18dp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+    <Spinner
+        android:id="@+id/spinner_car_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/entry_car_brands"
+        android:prompt="@string/entry_car_message" />
+
+
+    <RadioGroup
+        android:id="@+id/radio_car_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio_car_color_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_car_color_red"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radio_car_color_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_car_color_black"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/radio_car_color_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_car_color_blue"
+            android:checked="false" />
+        <RadioButton
+            android:id="@+id/radio_car_color_silver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_car_color_silver"
+            android:checked="false" />
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+    <EditText
+        android:id="@+id/car_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLines="1"
+        android:hint="@string/entry_car_year" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+    <Spinner
+        android:id="@+id/spinner_car_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/entry_car_type"
+        android:prompt="@string/entry_car_type_msg" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

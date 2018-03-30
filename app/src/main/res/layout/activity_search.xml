@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
+    android:orientation="vertical"
     tools:context="com.byethost4.itisarndwebsite.elitelistapp.SearchActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:id="@+id/new_entry_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#fff"
+        android:text="@string/new_entry"        />
+
+
+</LinearLayout>

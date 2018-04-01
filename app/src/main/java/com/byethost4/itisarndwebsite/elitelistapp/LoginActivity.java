@@ -1,17 +1,14 @@
 package com.byethost4.itisarndwebsite.elitelistapp;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.EditText;
-import android.content.Intent;
-
-
-
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,9 +21,9 @@ public class LoginActivity extends AppCompatActivity {
         setTitle(R.string.login_label);
 
         // pridėta nauja eilutė
-        final EditText userName = (EditText) findViewById(R.id.user_name);
-        final EditText password = (EditText) findViewById(R.id.password);
-        final CheckBox checkBox = (CheckBox) findViewById(R.id.login_remember_me);
+        final EditText userName = findViewById(R.id.user_name);
+        final EditText password = findViewById(R.id.password);
+        final CheckBox checkBox = findViewById(R.id.login_remember_me);
 
         final User user = new User(LoginActivity.this);
         checkBox.setChecked(user.isRemembered());
@@ -43,14 +40,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        Button loginButton = (Button) findViewById(R.id.login_button);
+        Button loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Sitoje vietoje rasomas kodas, kuris vykdomas ant mygtuko paspaudimo
-//                Toast.makeText(LoginActivity.this,
-//                        "Prisijungimo vardas: "+userName.getText().toString()+"\n"+
-//                                "Slaptažodis: "+password.getText().toString(),
-//                        Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this,
+                        "Prisijungimo vardas: "+userName.getText().toString()+"\n"+
+                                "Slaptažodis: "+password.getText().toString(),
+                        Toast.LENGTH_LONG).show();
                 boolean cancel = false;
                 userName.setError(null);
                 password.setError(null);
@@ -87,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-        Button registerButton = (Button) findViewById(R.id.register_button);
+        Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

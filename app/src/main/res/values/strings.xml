@@ -17,34 +17,56 @@
     <string name="register_title">Account Registration</string>
     <string name="register_success">Registration Successful</string>
     <string name="login_checkbox">Save login info?</string>
-    <string name="radio_car_color_red">Red</string>
-    <string name="radio_car_color_blue">Blue</string>
-    <string name="radio_car_color_yellow">Yellow</string>
-    <string name="radio_car_color_silver">Silver</string>
-    <string name="radio_car_color_black">Black</string>
-    <string name="new_entry">New Entry</string>
-    <string name="new_entry_message">New Entry creation</string>
-    <string-array name="entry_car_brands">
-        <item>Moskvitch</item>
-        <item>Volga</item>
-        <item>Ferrari</item>
-        <item>Lada</item>
-        <item>Volkswagen</item>
-        <item>Mazda</item>
-        <item>Trabant</item>
-        <item>Reliant</item>
-    </string-array>
-    <string name="entry_car_type_msg">Choose a car type</string>
-    <string name="entry_car_year">Year</string>
-    <string-array name="entry_car_type">
-        <item>Sedan</item>
-        <item>Hatchback</item>
-        <item>Coupe</item>
-        <item>4x4</item>
-        <item>Cabriolet</item>
-        <item>Pickup</item>
-    </string-array>
-    <string name="entry_car_message">Choose a car brand</string>
+
+    <!--<string name="radio_car_color_red">Red</string>-->
+    <!--<string name="radio_car_color_blue">Blue</string>-->
+    <!--<string name="radio_car_color_yellow">Yellow</string>-->
+    <!--<string name="radio_car_color_silver">Silver</string>-->
+    <!--<string name="radio_car_color_black">Black</string>-->
+    <!--<string name="new_entry">New Entry</string>-->
+    <!--<string name="new_entry_message">New Entry creation</string>-->
+    <!--<string-array name="entry_car_brands">-->
+    <!--<item>Moskvitch</item>-->
+    <!--<item>Volga</item>-->
+    <!--<item>Ferrari</item>-->
+    <!--<item>Lada</item>-->
+    <!--<item>Volkswagen</item>-->
+    <!--<item>Mazda</item>-->
+    <!--<item>Trabant</item>-->
+    <!--<item>Reliant</item>-->
+    <!--</string-array>-->
+    <!--<string name="entry_car_type_msg">Choose a car type</string>-->
+    <!--<string name="entry_car_year">Year</string>-->
+    <!--<string-array name="entry_car_type">-->
+    <!--<item>Sedan</item>-->
+    <!--<item>Hatchback</item>-->
+    <!--<item>Coupe</item>-->
+    <!--<item>4x4</item>-->
+    <!--<item>Cabriolet</item>-->
+    <!--<item>Pickup</item>-->
+    <!--</string-array>-->
+    <!--<string name="entry_car_message">Choose a car brand</string>-->
+    <string name="entry_new_btn">Naujas Auto</string>
+    <string name="entry_brand_label">Markė:</string>
+    <string name="entry_brand_audi">Audi</string>
+    <string name="entry_brand_seat">Seat</string>
+    <string name="entry_brand_bmw">BMW</string>
+    <string name="entry_color_label">Spalva:</string>
+    <string name="entry_color_black">Juoda</string>
+    <string name="entry_color_green">Salotinė</string>
+    <string name="entry_color_silver">Sidabrinė</string>
+    <string name="entry_year_label">Metai:</string>
+    <string name="entry_car_type_label">Kėbulas:</string>
+    <string name="entry_car_type_cabrio">Kabrioletas:</string>
+    <string name="entry_car_type_sedan">Sedanas</string>
+    <string name="entry_car_type_4x4">Visureigis</string>
+    <string name="entry_car_defects_label">Defektai:</string>
+    <string name="entry_car_defects_damaged">Daužta</string>
+    <string name="entry_car_defects_scratched">Trenkta</string>
+    <string name="entry_car_defects_drowned">Skendusi</string>
+    <string name="entry_submit_label">Pridėti Auto</string>
+
+
 
 
 </resources>

@@ -5,9 +5,7 @@
     <string name="login_user_name">User name</string>
     <string name="login_password">Password</string>
     <string name="login_message">Please enter your login</string>
-    <!--<string name="example_edittext">Example showing EditText</string>-->
-    <!--<string name="show_the_text">Show the Text</string>-->
-    <!--<string name="enter_text">text changes</string>-->
+
     <string name="login_button">Login</string>
     <string name="login_label">Login</string>
     <string name="login_invalid_username_password">Neteisingi prisijungimo duomenys</string>
@@ -18,34 +16,9 @@
     <string name="register_success">Registration Successful</string>
     <string name="login_checkbox">Save login info?</string>
 
-    <!--<string name="radio_car_color_red">Red</string>-->
-    <!--<string name="radio_car_color_blue">Blue</string>-->
-    <!--<string name="radio_car_color_yellow">Yellow</string>-->
-    <!--<string name="radio_car_color_silver">Silver</string>-->
-    <!--<string name="radio_car_color_black">Black</string>-->
-    <!--<string name="new_entry">New Entry</string>-->
-    <!--<string name="new_entry_message">New Entry creation</string>-->
-    <!--<string-array name="entry_car_brands">-->
-    <!--<item>Moskvitch</item>-->
-    <!--<item>Volga</item>-->
-    <!--<item>Ferrari</item>-->
-    <!--<item>Lada</item>-->
-    <!--<item>Volkswagen</item>-->
-    <!--<item>Mazda</item>-->
-    <!--<item>Trabant</item>-->
-    <!--<item>Reliant</item>-->
-    <!--</string-array>-->
-    <!--<string name="entry_car_type_msg">Choose a car type</string>-->
-    <!--<string name="entry_car_year">Year</string>-->
-    <!--<string-array name="entry_car_type">-->
-    <!--<item>Sedan</item>-->
-    <!--<item>Hatchback</item>-->
-    <!--<item>Coupe</item>-->
-    <!--<item>4x4</item>-->
-    <!--<item>Cabriolet</item>-->
-    <!--<item>Pickup</item>-->
-    <!--</string-array>-->
-    <!--<string name="entry_car_message">Choose a car brand</string>-->
+
+
+
     <string name="entry_new_btn">Naujas Auto</string>
     <string name="entry_brand_label">Markė:</string>
     <string name="entry_brand_audi">Audi</string>
@@ -65,8 +38,8 @@
     <string name="entry_car_defects_scratched">Trenkta</string>
     <string name="entry_car_defects_drowned">Skendusi</string>
     <string name="entry_submit_label">Pridėti Auto</string>
-
-
+    <string name="entry_car_defects_ok">Sveika</string>
+    <string name="entry_car_year_error_msg">Neteisingi metai</string>
 
 
 </resources>

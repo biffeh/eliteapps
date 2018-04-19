@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".EntryRegistryActivity"></activity>
+        <activity android:name=".EntryActivity"></activity>
     </application>
 
 </manifest>

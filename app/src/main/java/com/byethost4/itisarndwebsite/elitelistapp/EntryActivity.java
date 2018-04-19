@@ -1,5 +1,9 @@
 package com.byethost4.itisarndwebsite.elitelistapp;
 
+
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,9 +16,11 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 
 public class EntryActivity extends AppCompatActivity {
-
+    public static final String INSERT_URL = "http://itisarndwebsite.byethost4.com/mobile/insert.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,17 +116,61 @@ public class EntryActivity extends AppCompatActivity {
                             selectCarTypeSpinner,
                             carDefectChecked);
 
-                    Toast.makeText(EntryActivity.this,
-                            "Markė: " + car.getBrand() + "\n" +
-                                    "Spalva: " + car.getColor() + "\n" +
-                                    "Metai: " + car.getYear() + "\n" +
-                                    "Kėbulas: " + car.getType() + "\n" +
-                                    "Defektai: " + car.getDefect(),
-                            Toast.LENGTH_LONG).show();
+                    addToDb(car);
+//                    Toast.makeText(EntryActivity.this,
+//                            "Markė: " + car.getBrand() + "\n" +
+//                                    "Spalva: " + car.getColor() + "\n" +
+//                                    "Metai: " + car.getYear() + "\n" +
+//                                    "Kėbulas: " + car.getType() + "\n" +
+//                                    "Defektai: " + car.getDefect(),
+//                            Toast.LENGTH_LONG).show();
                 }
             }
         });
 
     }
-}
 
+    private void addToDb(final Car coolCar)
+    {
+        class NewEntry extends AsyncTask<String, Void, String>
+        {
+            ProgressDialog loading;
+            DB db = new DB();
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading =  ProgressDialog.show(EntryActivity.this,
+                        getResources().getString(R.string.entry_db_loading_msg),
+                        null,true,true);
+            }
+
+            @Override
+            protected String doInBackground(String... strings) {
+                //Pirmas String yra raktas, antras reikšmė
+                HashMap<String,String> carData = new HashMap<String, String>();
+                carData.put("marke",    strings[0]);
+                carData.put("spalva",   strings[1]);
+                carData.put("defektai", strings[2]);
+                carData.put("kebulas",  strings[3]);
+                carData.put("metai",    strings[4]);
+
+                String result = db.sendPostRequest(INSERT_URL, carData);
+
+                return result;
+            }
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(EntryActivity.this,s,Toast.LENGTH_LONG).show();
+                Intent goToSearch = new Intent(EntryActivity.this,SearchActivity.class);
+                startActivity(goToSearch);
+            }
+        }
+        NewEntry newEntry = new NewEntry();
+        newEntry.execute(coolCar.getBrand(),coolCar.getColor(),
+                coolCar.getDefect(),coolCar.getType(),
+                Integer.toString(coolCar.getYear()));
+    }
+}

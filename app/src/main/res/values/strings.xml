@@ -40,6 +40,8 @@
     <string name="entry_submit_label">Pridėti Auto</string>
     <string name="entry_car_defects_ok">Sveika</string>
     <string name="entry_car_year_error_msg">Neteisingi metai</string>
+    <string name="entry_db_loading_msg">Siunčiame pas kinus, Prašome palaukti...</string>
+
 
 
 </resources>

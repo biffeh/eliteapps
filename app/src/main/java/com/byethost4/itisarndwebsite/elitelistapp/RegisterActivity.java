@@ -64,9 +64,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                     addToDb(user);
 
-                    Toast.makeText(RegisterActivity.this,
-                            getResources().getString(R.string.register_success),
-                            Toast.LENGTH_LONG).show();
+//                    Toast.makeText(RegisterActivity.this,
+//                            getResources().getString(R.string.register_success),
+//                            Toast.LENGTH_LONG).show();
                     Intent goToLogin = new Intent(RegisterActivity.this, LoginActivity.class);//Pirmas param = is kurios veiklos, Antras į kuria veiklą
                     startActivity(goToLogin);
                     RegisterActivity.this.finish();

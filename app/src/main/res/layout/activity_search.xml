@@ -3,10 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.byethost4.itisarndwebsite.elitelistapp.SearchActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/carList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:layout_weight="1"
+        />
 
     <Button
         android:id="@+id/entry_btn"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/entry_new_btn" />
